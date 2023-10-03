@@ -1,0 +1,47 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WebDriverApi {
+
+    public static void main(String[] args) {
+        // Set the path to the ChromeDriver executable
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\tbhui\\OneDrive\\Desktop\\SeleniumWebDriver\\chromedriver\\chromedriver.exe");
+        
+        WebDriver driver = new ChromeDriver();
+        
+        // Navigate to the website
+        driver.get("https://magento.softwaretestingboard.com/");
+        
+        // Get and print the title of the page
+        String pageTitle = driver.getTitle();
+        System.out.println("Page title: " + pageTitle);
+        
+        // Maximize the window
+        driver.manage().window().maximize();
+        System.out.println("Window maximized.");
+        
+        // Delete cookies
+        driver.manage().deleteAllCookies();
+        
+        // Refresh the page
+        driver.navigate().refresh();
+        System.out.println("Page is refreshed.");
+        
+        // Pause execution for 10 seconds (not recommended, prefer explicit waits)
+        try {
+            Thread.sleep(5000); // Sleep for 10 seconds
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
+        
+        
+        
+        
+        // Close the browser
+        driver.quit();
+        
+        
+        
+    }
+}
