@@ -36,9 +36,7 @@ public class WebDriverApi {
         
         
         
-        
-        
-        // Close the browser
+   // Close the browser
         driver.quit();
         
         
